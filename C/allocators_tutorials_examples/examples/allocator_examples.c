@@ -1,7 +1,7 @@
 /*
  * allocator_examples.c - Demonstrations of each allocator type
  *
- * Compile: gcc -o allocator_examples allocator_examples.c -I../src
+ * Compile: clang -o allocator_examples allocator_examples.c -I../src
  * Run: ./allocator_examples
  */
 
