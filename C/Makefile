@@ -13,7 +13,7 @@ CFLAGS_RELEASE = $(CFLAGS_COMMON) -O3 -flto -march=native -DNDEBUG
 CFLAGS_MSAN = $(CFLAGS_COMMON) -g -O1 -fno-omit-frame-pointer \
               -fsanitize=memory -fsanitize-memory-track-origins
 
-# Uncomment the following line to build the simple memory allocator
+
 SRC = src/simple_memory_allocator.c
 MAIN = src/main.c
 TEST = tests/test_simple_memory_allocator.c
