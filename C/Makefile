@@ -21,7 +21,7 @@ BENCH = bench/bench_simple_memory_allocator.c
 
 .PHONY: all debug release msan test bench clean
 
-all: debug
+all: debug release msan
 
 bin:
 	mkdir -p bin
