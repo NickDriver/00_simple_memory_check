@@ -77,9 +77,9 @@ void simple_memory_allocator_destroy(SimpleMemoryAllocator *allocator) {
 // Print allocator status with formatted output
 void simple_memory_allocator_print_status(const SimpleMemoryAllocator *allocator) {
     if (allocator == NULL) {
-        printf("┌─────────────────────────────────────┐\n");
-        printf("│  ALLOCATOR STATUS: NULL             │\n");
-        printf("└─────────────────────────────────────┘\n");
+        printf("┌────────────────────────────────────┐\n");
+        printf("│    ALLOCATOR STATUS: NULL          │\n");
+        printf("└────────────────────────────────────┘\n");
         return;
     }
 
@@ -88,18 +88,18 @@ void simple_memory_allocator_print_status(const SimpleMemoryAllocator *allocator
         ? (double)allocator->used / allocator->size * 100.0
         : 0.0;
 
-    // Create visual progress bar (20 chars wide)
-    int bar_width = 20;
+    // Create visual progress bar (16 chars wide)
+    int bar_width = 16;
     int filled = (int)(usage_percent / 100.0 * bar_width);
 
-    printf("┌─────────────────────────────────────┐\n");
-    printf("│       MEMORY ALLOCATOR STATUS       │\n");
-    printf("├─────────────────────────────────────┤\n");
-    printf("│ Pool Address: %p      │\n", allocator->memory);
+    printf("┌────────────────────────────────────┐\n");
+    printf("│     MEMORY ALLOCATOR STATUS        │\n");
+    printf("├────────────────────────────────────┤\n");
+    printf("│ Pool Address: 0x%016lx   │\n", (unsigned long)allocator->memory);
     printf("│ Total Size:   %10zu bytes     │\n", allocator->size);
     printf("│ Used:         %10zu bytes     │\n", allocator->used);
     printf("│ Free:         %10zu bytes     │\n", free_bytes);
-    printf("├─────────────────────────────────────┤\n");
+    printf("├────────────────────────────────────┤\n");
     printf("│ Usage: [");
 
     for (int i = 0; i < bar_width; i++) {
@@ -110,6 +110,6 @@ void simple_memory_allocator_print_status(const SimpleMemoryAllocator *allocator
         }
     }
 
-    printf("] %5.1f%%  │\n", usage_percent);
-    printf("└─────────────────────────────────────┘\n");
+    printf("] %5.1f%%   │\n", usage_percent);
+    printf("└────────────────────────────────────┘\n");
 }
