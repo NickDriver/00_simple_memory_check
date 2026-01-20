@@ -14,7 +14,7 @@ CFLAGS_MSAN = $(CFLAGS_COMMON) -g -O1 -fno-omit-frame-pointer \
               -fsanitize=memory -fsanitize-memory-track-origins
 
 # Uncomment the following line to build the simple memory allocator
-SRC = # src/simple_memory_allocator.c
+SRC = src/simple_memory_allocator.c
 MAIN = src/main.c
 TEST = tests/test_simple_memory_allocator.c
 BENCH = bench/bench_simple_memory_allocator.c
